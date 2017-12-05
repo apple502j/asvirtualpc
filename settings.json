@@ -1,0 +1,10 @@
+{
+  "user": {
+    "lang": "ja",
+    "name": "user"
+  },
+  "style": {
+    "prompt": "{nowtime} @ {user}>",
+    "datetime": "%Y/%m/%d %H:%M:%S"
+  }
+}
