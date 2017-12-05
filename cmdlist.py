@@ -30,6 +30,7 @@
 # This is a module called from main.py.
 
 import defaultModules as dm
+import userModules as um
 import re
 
 def docommand(command):
