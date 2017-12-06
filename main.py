@@ -43,6 +43,8 @@ def defaultset():
 			global translateDict
 			translateDict = json.load(tfp)
 
+defaultset()
+
 def tr(trKey,trDef):
 	if "translateDict" in globals():
 		if settings["user"]["lang"] in translateDict:
@@ -53,7 +55,6 @@ def tr(trKey,trDef):
 		return trDef
 
 try:
-	defaultset()
 	print(tr("ASVPC","AS Virtual PC"))
 	while True:
 		ndo=datetime.datetime.now()
