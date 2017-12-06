@@ -30,31 +30,20 @@
 import datetime
 import json
 from cmdlist import docommand
+from tr import begintr,tr
 
 cmd="";
 
 def defaultset():
 	filename="settings.json"
-	translate="translate.json"
 	with open(filename,"r") as fp:
 		global settings
 		settings = json.load(fp)
-		with open(translate,"r") as tfp:
-			global translateDict
-			translateDict = json.load(tfp)
 
-defaultset()
-
-def tr(trKey,trDef):
-	if "translateDict" in globals():
-		if settings["user"]["lang"] in translateDict:
-			return translateDict.get(settings["user"]["lang"]).get(trKey,trDef)
-		else:
-			return trDef
-	else:
-		return trDef
 
 try:
+	defaultset()
+	begintr()
 	print(tr("ASVPC","AS Virtual PC"))
 	while True:
 		ndo=datetime.datetime.now()

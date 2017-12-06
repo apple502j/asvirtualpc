@@ -26,17 +26,23 @@
     http://creativecommons.org/licenses/by-sa/4.0/
 
 '''
+import json
 
-# This is a module called from main.py.
+def begintr():
+	filename="settings.json"
+	with open(filename,"r") as fp:
+		global settings
+		settings = json.load(fp)
 
-import defaultModules as dm
-import userModules as um
-import re
-
-def docommand(command):
-	if re.match("^licenses?",command):
-		dm.license()
-	if re.match("^credits?",command):
-		dm.credits()
-	if re.match("^(ex|qu)it",command):
-		dm.quit()
+def tr(trKey,trDef):
+	translate="translate.json"
+	with open(translate,"r") as tfp:
+                global translateDict
+                translateDict = json.load(tfp)
+	if "translateDict" in globals():
+		if settings["user"]["lang"] in translateDict:
+			return translateDict.get(settings["user"]["lang"]).get(trKey,trDef)
+		else:
+			return trDef
+	else:
+		return trDef

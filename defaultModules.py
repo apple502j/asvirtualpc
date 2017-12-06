@@ -31,6 +31,8 @@
 
 from gpltext import GPL_license
 from linereadw import linereadw
+from tr import tr
+import sys
 
 def license():
 	linereadw(GPL_license,20)
@@ -49,3 +51,7 @@ def credits():
 	Library linereadw is made by apple502j.
 	(MIT,2-clause-BSD,CC BY 1.0,2.0,2.5,3.0,4.0)
 	\r''',end="")
+
+def quit():
+	print(tr("SEEYOU","See you!"))
+	sys.exit()
