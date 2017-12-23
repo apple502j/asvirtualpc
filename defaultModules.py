@@ -33,6 +33,7 @@ from gpltext import GPL_license
 from linereadw import linereadw
 from tr import tr
 import sys
+import random
 
 def license():
 	linereadw(GPL_license,20)
@@ -55,3 +56,7 @@ def credits():
 def quit():
 	print(tr("SEEYOU","See you!"))
 	sys.exit()
+
+def dice():
+        random.seed()
+        print(str(random.randint(1,6)) + tr("DICE"," came out."))
