@@ -58,5 +58,30 @@ def quit():
 	sys.exit()
 
 def dice():
-        random.seed()
-        print(str(random.randint(1,6)) + tr("DICE"," came out."))
+	random.seed()
+	print(str(random.randint(1,6)) + tr("DICE"," came out."))
+
+def whatIsTheNumber():
+	try:
+		random.seed()
+		num = random.randint(1,1000)
+		print(tr("WITN_BEGIN","What is the number from 1 to 1000?"))
+		n=0
+		while True:
+			n+=1
+			b=""
+			if n!=1:
+				b="s"
+			answer=int(input(tr("WITN_INPUT","({a} time{s})Number >").format(a=n,s=b)))
+			if answer == num:
+				print(tr("WITN_CORRECT","Correct!"))
+				break
+			elif answer > num:
+				print(tr("WITN_BIG","That's big."))
+			else:
+				print(tr("WITN_SMALL","That's small."))
+	
+	except KeyboardInterrupt:
+		print(tr("WITN_CLOSED","The number is {a}. See you!").format(a=num))
+	except:
+		pass

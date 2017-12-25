@@ -41,4 +41,6 @@ def docommand(command):
 	if re.match("^(ex|qu)it",command):
 		dm.quit()
 	if re.match("^dice$",command):
-                dm.dice()
+		dm.dice()
+	if re.match("^(witn|numbers?game)$",command):
+		dm.whatIsTheNumber()

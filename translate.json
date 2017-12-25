@@ -1,6 +1,13 @@
 {
   "ja": {
     "SEEYOU": "\nÇ≥ÇÊÇ§Ç»ÇÁ!",
-    "ASVPC": "AS Virtual PC"
+    "ASVPC": "AS Virtual PC",
+    "DICE":"Ç™èoÇ‹ÇµÇΩ",
+    "WITN_BEGIN":"1Ç©ÇÁ1000Ç‹Ç≈ÅAêîÇìñÇƒÇƒÇÀ!",
+    "WITN_INPUT":"{a}âÒñ⁄:êî >",
+    "WITN_CORRECT":"Ç†ÇΩÇË!",
+    "WITN_BIG":"Ç±ÇÍÇ∂Ç·ëÂÇ´Ç¢ÇÊ",
+    "WITN_SMALL":"Ç±ÇÍÇ∂Ç·è¨Ç≥Ç¢ÇÊ",
+    "WITN_CLOSED":"êîÇÕ{a}Ç≈ÇµÇΩÅBÇ≥ÇÊÇ§Ç»ÇÁ!"
   }
 }
