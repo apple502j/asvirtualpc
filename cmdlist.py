@@ -44,3 +44,5 @@ def docommand(command):
 		dm.dice()
 	if re.match("^(witn|numbers?game)$",command):
 		dm.whatIsTheNumber()
+	if re.match("^brain[fd]uck$",command):
+		dm.brainduck()

@@ -34,6 +34,7 @@ from linereadw import linereadw
 from tr import tr
 import sys
 import random
+import application.brainff as _brainff
 
 def license():
 	linereadw(GPL_license,20)
@@ -51,6 +52,14 @@ def credits():
 	
 	Library linereadw is made by apple502j.
 	(MIT,2-clause-BSD,CC BY 1.0,2.0,2.5,3.0,4.0)
+
+	Brainduck-duck(d to f) by Kenny2github under MIT License
+	(C) 2017-2018 Kenny2github All rights reserved.
+
+	Getch by ActiveState under Python Software License
+	(C) 2017 ActiveState All rights reserved.
+
+	See all credits in CREDITS.
 	\r''',end="")
 
 def quit():
@@ -65,7 +74,7 @@ def whatIsTheNumber():
 	try:
 		random.seed()
 		num = random.randint(1,1000)
-		print(tr("WITN_BEGIN","What is the number from 1 to 1000?"))
+		print(tr("WITN_BEGIN","What is the number?(from 1 to 1000)"))
 		n=0
 		while True:
 			n+=1
@@ -85,3 +94,13 @@ def whatIsTheNumber():
 		print(tr("WITN_CLOSED","The number is {a}. See you!").format(a=num))
 	except:
 		pass
+
+def brainduck():
+        # Be "duck".
+	try:
+		while True:
+			_brainff.fuck(input("Brainduck >"))
+	except KeyboardInterrupt:
+		print("")
+	except:
+		print(tr("BRAIN_ERR","Something wrong happened, so Brainduck was crashed."))
