@@ -9,6 +9,12 @@
     "WITN_BIG":"これじゃ大きいよ",
     "WITN_SMALL":"これじゃ小さいよ",
     "WITN_CLOSED":"数は{a}でした。さようなら!",
-    "BRAIN_ERR":"インタプリタは実行中のエラーのため、強制終了しました。"
+    "BRAIN_ERR":"インタプリタは実行中のエラーのため、強制終了しました。",
+    "SYSINFO_OS":"OS:\t {0}\n",
+    "SYSINFO_LOCATION":"ASVirtualPC インストール先:\t {1}\n",
+    "SYSINFO_PCNAME":"コンピューター名:\t {2}\n\n",
+    "SYSINFO_USERNAME":"ユーザー名:\t {3}\n",
+    "SYSINFO_LANG":"使用言語:\t {4}\n\n",
+    "SYSINFO_PYTHONVER":"Pythonのバージョン:\t {5}"
   }
 }

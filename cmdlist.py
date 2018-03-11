@@ -46,3 +46,7 @@ def docommand(command):
 		dm.whatIsTheNumber()
 	if re.match("^brain[fd]uck$",command):
 		dm.brainduck()
+	if re.match("^(py|)piano$",command):
+		dm.pypiano()
+	if re.match("^sys(|tem)info$",command):
+		dm.sysinfo()

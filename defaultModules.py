@@ -32,9 +32,24 @@
 from gpltext import GPL_license
 from linereadw import linereadw
 from tr import tr
+from importlib import reload
 import sys
 import random
+import json
+import os
+import platform
 import application.brainff as _brainff
+
+global settings
+
+global pypianoload
+pypianoload=0
+
+def defaultset():
+	filename="settings.json"
+	with open(filename,"r") as fp:
+		global settings
+		settings = json.load(fp)
 
 def license():
 	linereadw(GPL_license,20)
@@ -52,6 +67,9 @@ def credits():
 	
 	Library linereadw is made by apple502j.
 	(MIT,2-clause-BSD,CC BY 1.0,2.0,2.5,3.0,4.0)
+
+	PyPiano is made by apple502j.
+	(GPLv3-or-later)
 
 	Brainduck-duck(d to f) by Kenny2github under MIT License
 	(C) 2017-2018 Kenny2github All rights reserved.
@@ -104,3 +122,27 @@ def brainduck():
 		print("")
 	except:
 		print(tr("BRAIN_ERR","Something wrong happened, so Brainduck was crashed."))
+
+def pypiano():
+	global pypianoload
+	if pypianoload==0:
+		import application.piano as piano
+		pypianoload=1
+	else:
+		reload(piano)
+
+def sysinfo():
+	defaultset()
+	print(str(tr('SYSINFO_OS','Your OS:\t {0}\n') +
+	tr('SYSINFO_LOCATION','ASVirtualPC Location:\t {1}\n')+
+	tr('SYSINFO_PCNAME','Computer Name:\t {2}\n\n')+
+	tr('SYSINFO_USERNAME','Your Userame:\t {3}\n')+
+	tr('SYSINFO_LANG','Your Language:\t {4}\n\n')+
+	tr('SYSINFO_PYTHONVER','Pyhon Version:\t {5}')).format(
+		platform.system(),
+		os.getcwd(),
+		platform.node(),
+		settings.get("user",{"name":""}).get("name",""),
+                settings.get("user",{"lang":""}).get("lang",""),
+		platform.python_version()
+	))
